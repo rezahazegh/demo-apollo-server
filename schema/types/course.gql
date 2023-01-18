@@ -1,0 +1,28 @@
+type Course {
+  id: ID
+  name: String
+  description: String
+  status: String
+  teacher: Teacher
+}
+
+enum CourseStatus {
+  NotStarted
+  InProgress
+  Completed
+}
+
+type Query {
+  course(id: ID): Course
+  courses: [Course]
+}
+
+type Mutation {
+  addCourse(
+    name: String
+    description: String
+    status: CourseStatus
+    teacherId: ID
+  ): Course
+  deleteCourse(id: ID): Course
+}

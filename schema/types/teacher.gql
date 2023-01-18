@@ -1,0 +1,16 @@
+type Teacher {
+  id: ID
+  name: String
+  email: String
+  phone: String
+}
+
+type Query {
+  teacher(id: ID): Teacher
+  teachers: [Teacher]
+}
+
+type Mutation {
+  addTeacher(name: String!, email: String, phone: String): Teacher
+  deleteTeacher(id: ID): Teacher
+}
